@@ -6,6 +6,8 @@ Basta baixar a classe PayloadPix e utilizar em seu projeto. :D
 
 O Código QRCODE pode ser gerado de qualquer chave pix(E-mail,chave aleatória,cpf,cnpj,telefone), lembrando não deve utilizar nenhuma formatação seja de telefone ou CPF/CNPJ apenas os digítos pode ver um exemplo no arquivo example.php
 
+Se não quiser definir um valor pré-definido para esse código basta passar o valor zero no metódo setAmount() ou não utilizar o mesmo.
+
 require "PayloadPix.php";
 
 //EXEMPLO COM CPF
