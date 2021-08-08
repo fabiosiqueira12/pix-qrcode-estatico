@@ -1,10 +1,9 @@
 # Gerador de código estático de uma chave pix PHP
-Classe para gerar código QR Code estático de uma chave pix, seguindo a documentação do Bacen:
-https://www.bcb.gov.br/content/estabilidadefinanceira/pix/Regulamento_Pix/II-ManualdePadroesparaIniciacaodoPix-versao2-1.pdf
+Classe para gerar código QR Code estático de uma chave pix, seguindo a documentação do Bacen.
 
 Basta baixar a classe PayloadPix e utilizar em seu projeto. :D
 
-O Código QRCODE pode ser gerado de qualquer chave pix(E-mail,chave aleatória,cpf,telefone), lembrando não deve utilizar nenhuma formatação seja de telefone ou CPF apenas os digítos pode ver um exemplo no arquivo example.php
+O Código QRCODE pode ser gerado de qualquer chave pix(E-mail,chave aleatória,CPF,CNPJ,telefone), lembrando não deve utilizar nenhuma formatação seja de telefone,CPF ou CNPJ apenas os digítos pode ver um exemplo no arquivo example.php
 
 Se não quiser definir um valor pré-definido para esse código basta passar o valor zero no metódo setAmount() ou não utilizar o mesmo.
 
@@ -15,8 +14,20 @@ $payLoadQRCode = (new PayloadPix)
 ->setPixKey("88191879069")
 ->setMerchantName("Nome do dono da conta")
 ->setMerchantCity("Sao Paulo")
-->setAmount(0)
-->setTxid(\uniqid())->getPayLoad();
+->setAmount(100)
+->setTxid(\uniqid())
+->getPayLoad();
+
+//Com Descrição
+$payLoadQRCode = (new PayloadPix)
+->setPixKey("88191879069")
+->setMerchantName("Nome do dono da conta")
+->setMerchantCity("Sao Paulo")
+->setAmount(50)
+->setDescription("Descrição do pagamento")
+->setTxid(\uniqid())
+->getPayLoad();
+
 
 echo $payLoadQRCode;
 //Resultado
