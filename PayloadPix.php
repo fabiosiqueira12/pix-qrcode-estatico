@@ -1,7 +1,5 @@
 <?php
 
-namespace App\Core;
-
 /**
  * Gerar código estático de uma chave pix para QR Code de pagamento
  */
