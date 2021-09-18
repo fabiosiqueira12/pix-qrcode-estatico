@@ -229,7 +229,7 @@ class PayloadPix{
      */ 
     public function setMerchantCity(string $merchantCity)
     {
-        $this->merchantCity = $this->removeCharEspeciais($merchantCity);
+        $this->merchantCity = substr($this->removeCharEspeciais($merchantCity), 0, 15);
         return $this;
     }
 
